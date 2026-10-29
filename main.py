@@ -1,7 +1,6 @@
 import telebot
 import os
 
-# यहाँ अपने टेलीग्राम बॉट का असली टोकन डाल देना (कोट्स के अंदर)
 TOKEN =9273529122:AAGtGX3UtZxviJxsYLDmXy UpG4a14MRRd4w
 bot = telebot.TeleBot(TOKEN)
 
@@ -13,7 +12,6 @@ def send_welcome(message):
 def echo_all(message):
     bot.reply_to(message, "नमस्ते! मैंने तेरा मैसेज देख लिया है!")
 
-# Render के लिए जरूरी वेब सर्वर (ताकि बॉट 24/7 चालू रहे)
 from flask import Flask
 from threading import Thread
 
@@ -33,4 +31,5 @@ def keep_alive():
 if __name__ == "__main__":
     keep_alive()
     bot.infinity_polling()
+    
   
